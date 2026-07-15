@@ -30,9 +30,9 @@
 
         header {
             max-width: 1200px;
-            margin: 0 auto 1rem auto; /* Reduced bottom margin to bring text closer to header */
+            margin: 0 auto 1rem auto;
             padding: 0 1rem;
-            text-align: center; /* Optional: Centers the h1 as well */
+            text-align: center;
         }
 
         h1 {
@@ -41,7 +41,6 @@
             letter-spacing: -0.02em;
         }
 
-        /* New class for the intro text */
         .intro-text {
             max-width: 800px;
             margin: 0 auto 3rem auto;
@@ -128,6 +127,51 @@
             padding-top: 2rem;
             font-size: 0.8rem;
             color: var(--text-muted);
+        }
+
+        /* Custom Table Styles for Licensing Section */
+        .licensing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2.5rem 0;
+            font-size: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .licensing-table th, 
+        .licensing-table td {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .licensing-table th {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .licensing-table td ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .licensing-table td ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .licensing-table td ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .pricing-model {
+            font-weight: 600;
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 0.25rem;
         }
     </style>
 </head>
@@ -249,6 +293,7 @@
                 <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
             </div>
         </section> 
+
         <section class="portfolio-block">
             <div class="media-container" tabIndex="0">
                 <video controls playsinline preload="metadata" muted>
@@ -286,7 +331,6 @@
         </section>
     </main>
 
-    <!-- Place this right above the <footer> in the HTML -->
     <div style="max-width: 1200px; margin: 4rem auto 0 auto; padding: 0 1rem; font-size: 0.75rem; color: #555; letter-spacing: 0.02em; border-top: 1px dashed #262626; padding-top: 1.5rem;">
         <strong style="color: var(--text-main); display: block; margin-bottom: 0.5rem;">TECHNICAL SPECIFICATIONS &amp; LICENSING</strong>
         <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
@@ -298,8 +342,71 @@
         </ul>
         
         <strong style="color: var(--text-main);">Enterprise Site License:</strong> 
-        Includes multi-display public performance rights, hardware-specific optimization, and enterprise-grade file delivery for high-density hospitality matrices.
-        <br><br>
+        Includes multi-display public performance rights, hardware-specific optimization, and enterprise-grade file delivery for high-density hospitality matrices.<P><BR><BR>
+        
+        <!-- NEW ACQUISITION TIERS TABLE -->
+        <strong style="color: var(--text-main);">Acquisition Tiers</strong>
+        <div style="overflow-x: auto;">
+            <table class="licensing-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Tier</th>
+                        <th style="width: 25%;">Deployment Scope</th>
+                        <th style="width: 35%;">Deliverables &amp; Integration</th>
+                        <th style="width: 20%;">Pricing Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong style="color: var(--text-main);">01: Permanent Site License</strong></td>
+                        <td>Designated primary spatial display (e.g., Main Lobby or Wellness Suite)</td>
+                        <td>
+                            <ul>
+                                <li>• Permanent native license of the 86 Restorative Sanctuary sequences</li>
+                                <li>• Local, offline-first media deployment</li>
+                                <li>• Lifetime visual permanence with zero recurring fees</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class="pricing-model">Premium Flat Fee</span>
+                            (Acquisition cost)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color: var(--text-main);">02: Spatial Calibration Tier</strong></td>
+                        <td>Full property or multi-display wellness zones</td>
+                        <td>
+                            <ul>
+                                <li>• Permanent native license of the 86 Restorative Sanctuary sequences</li>
+                                <li>• Personal spatial psychology and environmental lighting analysis</li>
+                                <li>• Custom playback sequence curation tailored to your architectural layout</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class="pricing-model">Flat Fee + Creative Direction</span>
+                            (Bespoke architectural service)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color: var(--text-main);">03: Sovereign Portfolio License</strong></td>
+                        <td>Exclusive multi-property or regional development</td>
+                        <td>
+                            <ul>
+                                <li>• Full enterprise deployment across all regional properties</li>
+                                <li>• Guaranteed regional exclusivity (no competing space in your market may deploy this series)</li>
+                                <li>• Complete custom sequence scheduling</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class="pricing-model">Bespoke Enterprise CapEx</span>
+                            (Exclusive portfolio pricing)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- END NEW ACQUISITION TIERS TABLE -->
+
         <strong style="color: var(--text-main);">Bespoke Calibration:</strong> 
         Includes custom visual aspect-ratio re-editing and hardware-specific sound design to calibrate the 48Hz sub-harmonic transitions directly to your property’s physical architecture.<br><br>
         
@@ -308,7 +415,7 @@
         
         <strong style="color: var(--text-main);">Seasonal Maintenance Upgrade:</strong> Expands the base license to include four distinct, seasonally engineered content packages per year (Spring, Summer, Autumn, Winter) to maintain environmental alignment with shifting property operations without requiring hardware re-configuration.<br><br>
         
-        <strong style="color: var(--text-main);">Resources:</strong> <a href="Executive.Brief.iQæra.pdf">Executive.Brief.iQæra.pdf</a> | <a href="iQaera.Owner.Handbook.pdf"> iQaera.Owner.Handbook.pdf</a>
+        <strong style="color: var(--text-main);">Resources:</strong> <a href="Executive.Brief.iQæra.pdf" style="color: var(--text-muted);">Executive.Brief.iQæra.pdf</a> | <a href="iQaera.Owner.Handbook.pdf" style="color: var(--text-muted);">iQaera.Owner.Handbook.pdf</a>
     </div>
 
     <footer>
