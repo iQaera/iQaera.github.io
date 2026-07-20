@@ -1,419 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iQæra Ambient Cinema</title>
-<style>
-:root {
---bg-color: #0a0a0a;
---card-bg: #121212;
---text-main: #f5f5f5;
---text-muted: #8a8a8a;
---border-color: #262626;
---accent: #ffffff;
-}* {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curated atmospheric visual studies for luxury residential, wellness, and boutique hospitality. iQæra offers bespoke, mathematically coherent spatial media installations.">
+    <title>iQæra Ambient Cinema</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #121212;
+            --text-main: #f5f5f5;
+            --text-muted: #8a8a8a;
+            --border-color: #262626;
+            --accent: #ffffff;
+        }
 
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-main);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        line-height: 1.6;
-        padding: 3rem 1rem;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    header {
-        max-width: 1200px;
-        margin: 0 auto 1rem auto;
-        padding: 0 1rem;
-        text-align: center;
-    }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 3rem 1rem;
+        }
 
-    h1 {
-        font-size: 1.75rem;
-        font-weight: 400;
-        letter-spacing: -0.02em;
-    }
+        header {
+            max-width: 1200px;
+            margin: 0 auto 1rem auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
 
-    .intro-text {
-        max-width: 800px;
-        margin: 0 auto 3rem auto;
-        padding: 0 1rem;
-        text-align: center;
-        color: var(--text-muted);
-    }
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
 
-    /* Portfolio Presentation Grid */
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2.5rem;
-        padding: 0 1rem;
-    }
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            padding: 0 1rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
 
-    .portfolio-block {
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 4px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-    }
+        /* Portfolio Presentation Grid */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 0 1rem;
+        }
 
-    .media-container {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background: #000;
-    }
+        .portfolio-block {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .media-container img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        transition: opacity 0.3s ease;
-    }
+        .media-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
 
-    .media-container:focus-within img,
-    .media-container:hover img {
-        opacity: 0;
-        pointer-events: none;
-    }
+        .media-container img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
 
-    video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
+        .media-container:focus-within img,
+        .media-container:hover img {
+            opacity: 0;
+            pointer-events: none;
+        }
 
-    .meta-panel {
-        padding: 1.25rem;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-    .meta-title {
-        font-size: 1rem;
-        font-weight: 500;
-        margin-bottom: 0.25rem;
-        letter-spacing: -0.01em;
-    }
+        .meta-panel {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
 
-    .meta-desc {
-        color: var(--text-muted);
-        font-size: 0.82rem;
-        line-height: 1.4;
-    }
+        .meta-title {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.01em;
+        }
 
-    footer {
-        max-width: 1200px;
-        margin: 6rem auto 2rem auto;
-        padding: 0 1rem;
-        border-top: 1px solid var(--border-color);
-        padding-top: 2rem;
-        font-size: 0.8rem;
-        color: var(--text-muted);
-    }
+        .meta-desc {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
 
-    /* Custom Grid Styles for Licensing Section */
-    .licensing-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.25fr 1.75fr 1fr;
-        margin: 1.5rem 0 2.5rem 0;
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        border-top: 1px solid var(--border-color);
-        border-left: 1px solid var(--border-color);
-        min-width: 800px;
-    }
+        footer {
+            max-width: 1200px;
+            margin: 6rem auto 2rem auto;
+            padding: 0 1rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
 
-    .licensing-cell {
-        border-bottom: 1px solid var(--border-color);
-        border-right: 1px solid var(--border-color);
-        padding: 1rem;
-    }
+        /* Custom Table Styles for Licensing Section */
+        .licensing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2.5rem 0;
+            font-size: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
 
-    .licensing-header {
-        background-color: var(--card-bg);
-        color: var(--text-main);
-        font-weight: 600;
-        letter-spacing: 0.02em;
-    }
+        .licensing-table th, 
+        .licensing-table td {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            vertical-align: top;
+            text-align: left;
+        }
 
-    .licensing-grid ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+        .licensing-table th {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
 
-    .licensing-grid ul li {
-        margin-bottom: 0.5rem;
-    }
-    
-    .licensing-grid ul li:last-child {
-        margin-bottom: 0;
-    }
+        .licensing-table td ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .pricing-model {
-        font-weight: 600;
-        color: var(--text-main);
-        display: block;
-        margin-bottom: 0.25rem;
-    }
-&lt;/style&gt;
+        .licensing-table td ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .licensing-table td ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .pricing-model {
+            font-weight: 600;
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+    </style>
 </head>
 <body>
 
-&lt;header&gt;
-    &lt;h1&gt;iQæra&lt;/h1&gt;
-&lt;/header&gt;
-
-&lt;p class="intro-text"&gt;
-    Crafted for the quiet spaces we inhabit—luxury residential, wellness sanctuaries, and boutique hospitality—The Restorative Sanctuary Collection is a curated portfolio of hand-guided, atmospheric visual studies. Created by iQæra, this collection is designed to act as a living, grounding element within a room, bringing the calming, restorative presence of natural physics and organic light indoors.
-&lt;/p&gt;
-
-&lt;main&gt;
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/bubblejewels.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection I Evolving Forms&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/BrokenHeartFluorite.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection II Morphing Fields&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/CirclingTheWand.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection III Chromatic Drift&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/PinkForest2.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection IV Monolithic Form&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/purplewater.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection V Topological Trace&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/closeup.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection V Topological Trace&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/orangeorbs.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection IV Monolithic Form&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/heartwater2_MASTER_GOLD.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection VI Aquatic Narratives&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/singledropandout.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection VII Imaginative Riparian Environs&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt; 
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/Deco.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection VIII Fluorite&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/DeepBlueSurface_MASTER_GOLD.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection IX Aquatic Geometries&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section class="portfolio-block"&gt;
-        &lt;div class="media-container" tabIndex="0"&gt;
-            &lt;video controls playsinline preload="metadata" muted&gt;
-                &lt;source src="assets/SeaBedCircles_MASTER_GOLD.mp4" type="video/mp4"&gt;
-            &lt;/video&gt;
-        &lt;/div&gt;
-        &lt;div class="meta-panel"&gt;
-            &lt;h3 class="meta-title"&gt;Collection IX Aquatic Geometries&lt;/h3&gt;
-            &lt;p class="meta-desc"&gt;70mm Emulsion Canvas • 48Hz Sub-Harmonic &amp; Saturation Mastering • Forensic Signature Embedded&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-&lt;/main&gt;
-
-&lt;div style="max-width: 1200px; margin: 4rem auto 0 auto; padding: 0 1rem; font-size: 0.75rem; color: #555; letter-spacing: 0.02em; border-top: 1px dashed #262626; padding-top: 1.5rem;"&gt;
+    <header>
+        <h1>iQæra Ambient Cinema</h1>
+    </header>
     
-    &lt;strong style="color: var(--text-main); display: block; margin-bottom: 0.5rem; font-size: 0.85rem;"&gt;SYSTEM ARCHITECTURE &amp;amp; TECHNICAL SPECIFICATIONS&lt;/strong&gt;
-    &lt;p style="margin-bottom: 1rem; color: var(--text-muted);"&gt;The iQæra processing core replaces destructive compression matrices with a closed, deterministic rendering environment to ensure absolute mathematical coherence with the physical parameters of the installation site.&lt;/p&gt;
-    &lt;ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;"&gt;
-        &lt;li style="margin-bottom: 0.5rem;"&gt;• &lt;strong style="color: var(--text-main);"&gt;Floating-Point Luma Isolation&lt;/strong&gt; The Chroma-Locked Pipeline executes a linearized 2.2-gamma passthrough to mathematically secure spatial boundaries, bypassing dynamic digital tinting and eliminating spectral drift on high-nit commercial LED walls.&lt;/li&gt;
-        &lt;li style="margin-bottom: 0.5rem;"&gt;• &lt;strong style="color: var(--text-main);"&gt;Torus-Mapped Vector Generation&lt;/strong&gt; Environments are generated via fixed-point mathematical kernels simulating fluid dynamics and light transport. Wrapped across multi-dimensional torus pathways, this guarantees continuous structural motion without detectable reset frames.&lt;/li&gt;
-        &lt;li style="margin-bottom: 0.5rem;"&gt;• &lt;strong style="color: var(--text-main);"&gt;Transient Acoustic Preservation&lt;/strong&gt; An oversampled, sovereign deterministic audio engine natively restores peak transient data. With 48Hz sub-harmonic tuning, it strips away digital glassiness to prevent listener fatigue and protect multi-zone speakers from physical strain.&lt;/li&gt;
-        &lt;li style="margin-bottom: 0.5rem;"&gt;• &lt;strong style="color: var(--text-main);"&gt;Forensic Waveform Security&lt;/strong&gt; Every asset embeds a sub-perceptual cryptographic watermark directly into the physical audio structure, ensuring un-strippable compliance tracking and IP security.&lt;/li&gt;
-        &lt;li style="margin-bottom: 0.5rem;"&gt;• &lt;strong style="color: var(--text-main);"&gt;Delivery Formats&lt;/strong&gt; Constant Rate Factor (CRF 18) Master Profiles, MPEG-4 Native Bitstream, 4K, 60fps, and 1:1 native pixel mapping.&lt;/li&gt;
-    &lt;/ul&gt;
-    
-    &lt;strong style="color: var(--text-main);"&gt;Enterprise Site License&lt;/strong&gt; 
-    Includes multi-display public performance rights, hardware-specific optimization, and enterprise-grade file delivery for high-density hospitality matrices.&lt;p&gt;&lt;br&gt;&lt;br&gt;
-    
-    &lt;strong style="color: var(--text-main); font-size: 0.85rem; display: block; margin-bottom: 0.5rem;"&gt;Acquisition Tiers&lt;/strong&gt;
-    &lt;div style="overflow-x: auto;"&gt;
-        &lt;div class="licensing-grid"&gt;
-            &lt;!-- Header Row --&gt;
-            &lt;div class="licensing-cell licensing-header"&gt;Tier&lt;/div&gt;
-            &lt;div class="licensing-cell licensing-header"&gt;Deployment Scope&lt;/div&gt;
-            &lt;div class="licensing-cell licensing-header"&gt;Deliverables &amp;amp; Integration&lt;/div&gt;
-            &lt;div class="licensing-cell licensing-header"&gt;Pricing Model&lt;/div&gt;
+    <p class="intro-text">
+        Crafted for the quiet spaces we inhabit—luxury residential, wellness sanctuaries, and boutique hospitality—The Restorative Sanctuary Collection is a curated portfolio of hand-guided, atmospheric visual studies. Created by iQæra, this collection is designed to act as a living, grounding element within a room, bringing the calming, restorative presence of natural physics and organic light indoors.
+    </p>
 
-            &lt;!-- Row 1 --&gt;
-            &lt;div class="licensing-cell"&gt;&lt;strong style="color: var(--text-main);"&gt;01 Permanent Site License&lt;/strong&gt;&lt;/div&gt;
-            &lt;div class="licensing-cell"&gt;Designated primary spatial display (e.g., Main Lobby or Wellness Suite)&lt;/div&gt;
-            &lt;div class="licensing-cell"&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;• Permanent native license of selected Restorative Sanctuary sequences&lt;/li&gt;
-                    &lt;li&gt;• Local, offline-first media deployment&lt;/li&gt;
-                    &lt;li&gt;• Lifetime visual permanence with zero recurring fees&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-            &lt;div class="licensing-cell"&gt;
-                &lt;span class="pricing-model"&gt;Premium Flat Fee&lt;/span&gt;
-                (Acquisition cost)
-            &lt;/div&gt;
+    <main>
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/bubblejewels.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection I: Evolving Forms</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
 
-            &lt;!-- Row 2 --&gt;
-            &lt;div class="licensing-cell"&gt;&lt;strong style="color: var(--text-main);"&gt;02 Spatial Calibration Tier&lt;/strong&gt;&lt;/div&gt;
-            &lt;div class="licensing-cell"&gt;Full property or multi-display wellness zones&lt;/div&gt;
-            &lt;div class="licensing-cell"&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;• Permanent native license of the 86 Restorative Sanctuary sequences&lt;/li&gt;
-                    &lt;li&gt;• Personal spatial psychology and environmental lighting analysis&lt;/li&gt;
-                    &lt;li&gt;• Custom playback sequence curation tailored to your architectural layout&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-            &lt;div class="licensing-cell"&gt;
-                &lt;span class="pricing-model"&gt;Flat Fee + Creative Direction&lt;/span&gt;
-                (Bespoke architectural service)
-            &lt;/div&gt;
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/Bloom_isolated.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection II: Morphing Fields</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
 
-            &lt;!-- Row 3 --&gt;
-            &lt;div class="licensing-cell"&gt;&lt;strong style="color: var(--text-main);"&gt;03 Sovereign Portfolio License&lt;/strong&gt;&lt;/div&gt;
-            &lt;div class="licensing-cell"&gt;Exclusive multi-property or regional development&lt;/div&gt;
-            &lt;div class="licensing-cell"&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;• Full enterprise deployment across all regional properties&lt;/li&gt;
-                    &lt;li&gt;• Guaranteed regional exclusivity (no competing space in your market may deploy this series)&lt;/li&gt;
-                    &lt;li&gt;• Complete custom sequence scheduling&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-            &lt;div class="licensing-cell"&gt;
-                &lt;span class="pricing-model"&gt;Bespoke Enterprise CapEx&lt;/span&gt;
-                (Exclusive portfolio pricing)
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/CirclingTheWand.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection III: Chromatic Drift</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
 
-    &lt;strong style="color: var(--text-main);"&gt;Bespoke Calibration&lt;/strong&gt; 
-    Includes custom visual aspect-ratio re-editing and hardware-specific sound design to calibrate the 48Hz sub-harmonic transitions directly to your property’s physical architecture.&lt;br&gt;&lt;br&gt;
-    
-    &lt;strong style="color: var(--text-main);"&gt;Bespoke Content&lt;/strong&gt; 
-    All installs are rendered and delivered with site-specific sequencing and audio for one-of-a-kind customization.&lt;br&gt;&lt;br&gt;
-    
-    &lt;strong style="color: var(--text-main);"&gt;Seasonal Maintenance Upgrade&lt;/strong&gt; Expands the base license to include four distinct, seasonally engineered content packages per year (Spring, Summer, Autumn, Winter) to maintain environmental alignment with shifting property operations without requiring hardware re-configuration.&lt;br&gt;&lt;br&gt;
-    
-    &lt;strong style="color: var(--text-main);"&gt;Resources&lt;/strong&gt; &lt;a href="Executive.Brief.iQæra.pdf" style="color: var(--text-muted);"&gt;Executive.Brief.iQæra.pdf&lt;/a&gt; | &lt;a href="iQaera.Owner.Handbook.pdf" style="color: var(--text-muted);"&gt;iQaera.Owner.Handbook.pdf&lt;/a&gt;
-&lt;/div&gt;
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/PinkForest2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection IV: Monolithic Form</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
 
-&lt;footer&gt;
-    &lt;p&gt;&amp;copy; 2026 All Rights Reserved. Hosted via GitHub Static Node.&lt;/p&gt;
-&lt;/footer&gt;
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/purplewater.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection V: Topological Trace</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
+
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/closeup.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection V: Topological Trace</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
+
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/orangeorbs.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection IV: Monolithic Form</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
+
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/heartwater2_MASTER_GOLD.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection VI: Aquatic Narratives</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
+
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/singledropandout.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection VII: Imaginative Riparian Environs</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section> 
+
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/Deco.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection VIII: Fluorite</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
+
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/DeepBlueSurface_MASTER_GOLD.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection IX: Aquatic Geometries</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
+
+        <section class="portfolio-block">
+            <div class="media-container" tabIndex="0">
+                <video controls playsinline preload="metadata" muted>
+                    <source src="assets/SeaBedCircles_MASTER_GOLD.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="meta-panel">
+                <h3 class="meta-title">Collection IX: Aquatic Geometries</h3>
+                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+            </div>
+        </section>
+    </main>
+
+    <div style="max-width: 1200px; margin: 4rem auto 0 auto; padding: 0 1rem; font-size: 0.75rem; color: #555; letter-spacing: 0.02em; border-top: 1px dashed #262626; padding-top: 1.5rem;">
+        
+        <strong style="color: var(--text-main); display: block; margin-bottom: 0.5rem; font-size: 0.85rem;">SYSTEM ARCHITECTURE &amp; TECHNICAL SPECIFICATIONS</strong>
+        <p style="margin-bottom: 1rem; color: var(--text-muted);">The iQæra processing core replaces destructive compression matrices with a closed, deterministic rendering environment to ensure absolute mathematical coherence with the physical parameters of the installation site.</p>
+        <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+            <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Floating-Point Luma Isolation:</strong> The Chroma-Locked Pipeline executes a linearized 2.2-gamma passthrough to mathematically secure spatial boundaries, bypassing dynamic digital tinting and eliminating spectral drift on high-nit commercial LED walls.</li>
+            <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Torus-Mapped Vector Generation:</strong> Environments are generated via fixed-point mathematical kernels simulating fluid dynamics and light transport. Wrapped across multi-dimensional torus pathways, this guarantees continuous structural motion without detectable reset frames.</li>
+            <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Transient Acoustic Preservation:</strong> An oversampled, sovereign deterministic audio engine natively restores peak transient data. With 48Hz sub-harmonic tuning, it strips away digital glassiness to prevent listener fatigue and protect multi-zone speakers from physical strain.</li>
+            <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Forensic Waveform Security:</strong> Every asset embeds a sub-perceptual cryptographic watermark directly into the physical audio structure, ensuring un-strippable compliance tracking and IP security.</li>
+            <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Delivery Formats:</strong> Constant Rate Factor (CRF 18) Master Profiles, MPEG-4 Native Bitstream, 4K, 60fps, and 1:1 native pixel mapping.</li>
+        </ul>
+        
+        <strong style="color: var(--text-main);">Enterprise Site License:</strong> 
+        Includes multi-display public performance rights, hardware-specific optimization, and enterprise-grade file delivery for high-density hospitality matrices.<P><BR><BR>
+        
+        <!-- NEW ACQUISITION TIERS TABLE -->
+        <strong style="color: var(--text-main);">Acquisition Tiers</strong>
+        <div style="overflow-x: auto;">
+            <table class="licensing-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Tier</th>
+                        <th style="width: 25%;">Deployment Scope</th>
+                        <th style="width: 35%;">Deliverables &amp; Integration</th>
+                        <th style="width: 20%;">Pricing Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong style="color: var(--text-main);">01: Permanent Site License</strong></td>
+                        <td>Designated primary spatial display (e.g., Main Lobby or Wellness Suite)</td>
+                        <td>
+                            <ul>
+                                <li>• Permanent native license of selected Restorative Sanctuary sequences</li>
+                                <li>• Local, offline-first media deployment</li>
+                                <li>• Lifetime visual permanence with zero recurring fees</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class="pricing-model">Premium Flat Fee</span>
+                            (Acquisition cost)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color: var(--text-main);">02: Spatial Calibration Tier</strong></td>
+                        <td>Full property or multi-display wellness zones</td>
+                        <td>
+                            <ul>
+                                <li>• Permanent native license of the 86 Restorative Sanctuary sequences</li>
+                                <li>• Personal spatial psychology and environmental lighting analysis</li>
+                                <li>• Custom playback sequence curation tailored to your architectural layout</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class="pricing-model">Flat Fee + Creative Direction</span>
+                            (Bespoke architectural service)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color: var(--text-main);">03: Sovereign Portfolio License</strong></td>
+                        <td>Exclusive multi-property or regional development</td>
+                        <td>
+                            <ul>
+                                <li>• Full enterprise deployment across all regional properties</li>
+                                <li>• Guaranteed regional exclusivity (no competing space in your market may deploy this series)</li>
+                                <li>• Complete custom sequence scheduling</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class="pricing-model">Bespoke Enterprise CapEx</span>
+                            (Exclusive portfolio pricing)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- END NEW ACQUISITION TIERS TABLE -->
+
+        <strong style="color: var(--text-main);">Bespoke Calibration:</strong> 
+        Includes custom visual aspect-ratio re-editing and hardware-specific sound design to calibrate the 48Hz sub-harmonic transitions directly to your property’s physical architecture.<br><br>
+        
+        <strong style="color: var(--text-main);">Bespoke Content:</strong> 
+        All installs are rendered and delivered with site-specific sequencing and audio for one-of-a-kind customization.<br><br>
+        
+        <strong style="color: var(--text-main);">Seasonal Maintenance Upgrade:</strong> Expands the base license to include four distinct, seasonally engineered content packages per year (Spring, Summer, Autumn, Winter) to maintain environmental alignment with shifting property operations without requiring hardware re-configuration.<br><br>
+        
+        <strong style="color: var(--text-main);">Resources:</strong> <a href="Executive.Brief.iQæra.pdf" style="color: var(--text-muted);">Executive.Brief.iQæra.pdf</a> | <a href="iQaera.Owner.Handbook.pdf" style="color: var(--text-muted);">iQaera.Owner.Handbook.pdf</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 All Rights Reserved. Hosted via GitHub Static Node.</p>
+    </footer>
+
 </body>
 </html>
