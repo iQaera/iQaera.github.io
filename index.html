@@ -10,7 +10,7 @@
             --bg-color: #0a0a0a;
             --card-bg: #121212;
             --text-main: #f5f5f5;
-            --text-muted: #8a8a8a;
+            --text-muted: #a0a0a0;
             --border-color: #262626;
             --accent: #ffffff;
         }
@@ -31,7 +31,7 @@
 
         header {
             max-width: 1200px;
-            margin: 0 auto 1rem auto;
+            margin: 0 auto 2rem auto;
             padding: 0 1rem;
             text-align: center;
         }
@@ -40,14 +40,62 @@
             font-size: 1.75rem;
             font-weight: 400;
             letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
         }
 
+        .header-copyright {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Two-Column Intro Section */
         .intro-text {
-            max-width: 800px;
-            margin: 0 auto 3rem auto;
+            max-width: 1000px;
+            margin: 0 auto 2rem auto;
             padding: 0 1rem;
-            text-align: center;
-            color:  #ccc(--text-main);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            text-align: left;
+            font-weight: 400;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: var(--text-main);
+        }
+
+        .intro-text .intro-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .intro-text .intro-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .media-notice {
+            max-width: 1000px;
+            margin: 0 auto 3.5rem auto;
+            padding: 0.75rem 1rem;
+            border-left: 2px solid var(--text-muted);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.02);
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .intro-text {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
 
         /* Portfolio Presentation Grid */
@@ -128,6 +176,10 @@
             padding-top: 2rem;
             font-size: 0.8rem;
             color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         /* Custom Table Styles for Licensing Section */
@@ -180,11 +232,27 @@
 
     <header>
         <h1>iQæra Ambient Cinema</h1>
+        <p class="header-copyright">&copy; iQæra. All Rights Reserved. Proprietary Spatial Media Works.</p>
     </header>
     
-    <p class="intro-text">
-        Crafted for the quiet spaces we inhabit—luxury residential, wellness sanctuaries, and boutique hospitality—The Restorative Sanctuary Collection is a curated portfolio of hand-guided, atmospheric visual studies. Created by iQæra, this collection is designed to act as a living, grounding element within a room, bringing the calming, restorative presence of natural physics and organic light indoors.<BR><BR> Forensic Visual Security: Every asset embeds a sub-perceptual cryptographic watermark directly into the physical structure alongside an optimized 8x8 DCT static spatial lattice embedded across blue channel luminance boundaries. This enables automated spatial breach detection, forensic integrity mapping, and un-strippable compliance tracking across all media.
-    </p>
+    <div class="intro-text">
+        <div class="intro-col">
+            <span class="intro-label">The Restorative Sanctuary Collection</span>
+            <p>
+                Crafted for the quiet spaces we inhabit—luxury residential, wellness sanctuaries, and boutique hospitality—this curated portfolio offers hand-guided, atmospheric visual studies. Created by iQæra, the collection functions as a living, grounding element within a space, introducing the restorative presence of natural physics and organic light indoors.
+            </p>
+        </div>
+        <div class="intro-col">
+            <span class="intro-label">Forensic Visual Security</span>
+            <p>
+                Every asset embeds a sub-perceptual cryptographic watermark directly into its physical structure, paired with an optimized 8x8 DCT static spatial lattice across blue channel luminance boundaries. This architecture enables automated spatial breach detection, forensic integrity mapping, and un-strippable compliance tracking across all media.
+            </p>
+        </div>
+    </div>
+
+    <div class="media-notice">
+        <strong>Notice on Master Works:</strong> Video loops displayed below are short, low-resolution temporal extracts compiled strictly for online preview purposes. Licensed architectural deployments consist of full-length, extended master sequences engineered for continuous spatial playback.
+    </div>
 
     <main>
         <section class="portfolio-block">
@@ -195,7 +263,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection I: Evolving Forms</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
 
@@ -207,7 +275,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection II: Morphing Fields</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
 
@@ -219,7 +287,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection III: Chromatic Drift</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
 
@@ -231,7 +299,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection IV: Monolithic Form</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
 
@@ -243,7 +311,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection V: Topological Trace</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
 
@@ -255,7 +323,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection V: Topological Trace</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
 
@@ -267,7 +335,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection IV: Monolithic Form</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
 
@@ -279,7 +347,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection VI: Aquatic Narratives</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
 
@@ -291,7 +359,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection VII: Imaginative Riparian Environs</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section> 
 
@@ -303,7 +371,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection VIII: Fluorite</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
 
@@ -315,7 +383,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection IX: Aquatic Geometries</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
 
@@ -327,7 +395,7 @@
             </div>
             <div class="meta-panel">
                 <h3 class="meta-title">Collection IX: Aquatic Geometries</h3>
-                <p class="meta-desc">70mm Emulsion Canvas • 48Hz Sub-Harmonic & Saturation Mastering • Forensic Signature Embedded</p>
+                <p class="meta-desc">4K Native Master • 60FPS Chroma-Locked Pipeline • Forensic Spatial Watermark</p>
             </div>
         </section>
     </main>
@@ -336,18 +404,29 @@
         
         <strong style="color: var(--text-main); display: block; margin-bottom: 0.5rem; font-size: 0.85rem;">SYSTEM ARCHITECTURE &amp; TECHNICAL SPECIFICATIONS</strong>
         <p style="margin-bottom: 1rem; color: var(--text-main);">The iQæra processing core replaces destructive compression matrices with a closed, deterministic rendering environment to ensure absolute mathematical coherence with the physical parameters of the installation site.</p>
+        
+        <!-- CORE SPECIFICATION TRIAD DEFINITION -->
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px;">
+            <strong style="color: var(--text-main); display: block; margin-bottom: 0.5rem; font-size: 0.8rem;">CORE SPECIFICATION TRIAD DEFINITION</strong>
+            <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-muted);">
+                <li style="margin-bottom: 0.4rem;">• <strong style="color: var(--text-main);">4K Native Master:</strong> Unscaled, pristine source rendering captured and mastered without temporal compression or pixel interpolation, ensuring edge-to-edge spatial fidelity across large-format architectural screens.</li>
+                <li style="margin-bottom: 0.4rem;">• <strong style="color: var(--text-main);">60FPS Chroma-Locked Pipeline:</strong> A high-frame-rate rendering process utilizing a linearized 2.2-gamma passthrough. This eliminates motion stutter and locks luminance boundaries to prevent spectral color drift on high-nit commercial display panels during extended playback.</li>
+                <li style="margin-bottom: 0.4rem;">• <strong style="color: var(--text-main);">Forensic Spatial Watermark:</strong> A sub-perceptual cryptographic matrix embedded directly across blue channel luminance structures, providing automated spatial breach detection, asset origin verification, and un-strippable compliance tracking for institutional licensing.</li>
+            </ul>
+        </div>
+
         <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
             <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Floating-Point Luma Isolation:</strong> The Chroma-Locked Pipeline executes a linearized 2.2-gamma passthrough to mathematically secure spatial boundaries, bypassing dynamic digital tinting and eliminating spectral drift on high-nit commercial LED walls.</li>
             <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Torus-Mapped Vector Generation:</strong> Environments are generated via fixed-point mathematical kernels simulating fluid dynamics and light transport. Wrapped across multi-dimensional torus pathways, this guarantees continuous structural motion without detectable reset frames.</li>
             <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Transient Acoustic Preservation:</strong> An oversampled, sovereign deterministic audio engine natively restores peak transient data. With 48Hz sub-harmonic tuning, it strips away digital glassiness to prevent listener fatigue and protect multi-zone speakers from physical strain.</li>
-            <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Forensic Visual and Waveform Security:</strong> Forensic Waveform & Visual Security: Every asset embeds a sub-perceptual cryptographic watermark directly into the physical visual structure alongside an optimized 8x8 DCT static spatial lattice embedded across blue channel luminance boundaries. This enables automated spatial breach detection, forensic integrity mapping, and un-strippable compliance tracking across all media. Additionally, for optional audio,  every asset embeds a sub-perceptual cryptographic audio watermark directly into the physical audio structure, which repeates every second, ensuring un-strippable compliance tracking and IP security.</li>
+            <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Forensic Visual and Waveform Security:</strong> Every asset embeds a sub-perceptual cryptographic watermark directly into the physical visual structure alongside an optimized 8x8 DCT static spatial lattice embedded across blue channel luminance boundaries. This enables automated spatial breach detection, forensic integrity mapping, and un-strippable compliance tracking across all media. Additionally, for optional audio, every asset embeds a sub-perceptual cryptographic audio watermark directly into the physical audio structure, which repeats every second, ensuring un-strippable compliance tracking and IP security.</li>
             <li style="margin-bottom: 0.5rem;">• <strong style="color: var(--text-main);">Delivery Formats:</strong> Constant Rate Factor (CRF 18) Master Profiles, MPEG-4 Native Bitstream, 4K, 60fps, and 1:1 native pixel mapping.</li>
         </ul>
         
         <strong style="color: var(--text-main);">Enterprise Site License:</strong> 
-        Includes multi-display public performance rights, hardware-specific optimization, and enterprise-grade file delivery for high-density hospitality matrices.<P><BR><BR>
+        Includes multi-display public performance rights, hardware-specific optimization, and enterprise-grade file delivery for high-density hospitality matrices.<p><br><br>
         
-        <!-- NEW ACQUISITION TIERS TABLE -->
+        <!-- ACQUISITION TIERS TABLE -->
         <strong style="color: var(--text-main);">Acquisition Tiers</strong>
         <div style="overflow-x: auto;">
             <table class="licensing-table">
@@ -408,7 +487,7 @@
                 </tbody>
             </table>
         </div>
-        <!-- END NEW ACQUISITION TIERS TABLE -->
+        <!-- END ACQUISITION TIERS TABLE -->
 
         <strong style="color: var(--text-main);">Bespoke Calibration:</strong> 
         Includes custom visual aspect-ratio re-editing and hardware-specific sound design to calibrate the 48Hz sub-harmonic transitions directly to your property’s physical architecture.<br><br>
@@ -422,7 +501,8 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 All Rights Reserved. Hosted via GitHub Static Node.</p>
+        <p>&copy; 2026 iQæra. All Rights Reserved. All visual and acoustic works copyrighted.</p>
+        <p>Hosted via GitHub Static Node.</p>
     </footer>
 
 </body>
